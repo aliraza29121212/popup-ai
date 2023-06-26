@@ -3,50 +3,98 @@
 <head>
   <title>Modal Popup Example</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+<style>
+    /* Custom CSS styles for the modal popup */
+.modal-content {
+  border-radius: 0;
+}
 
+.modal-header {
+  background-color: #f8f9fa;
+  border-bottom: none;
+}
+
+.modal-title {
+  color: #343a40;
+}
+
+.modal-body {
+  padding: 20px;
+}
+
+.modal-footer {
+  border-top: none;
+}
+
+.step-title {
+  color: #343a40;
+  margin-top: 0;
+}
+
+.youtube-video {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  height: 0;
+  overflow: hidden;
+}
+
+.youtube-video iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* #editBtn {
+  margin-top: 20px;
+} */
+
+</style>
 </head>
 <body>
 
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#editModal">
-  Edit Website
-</button>
-
-<!-- Modal -->
-<div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="editModalLabel">Edit Website</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-       <div id="step1">
-            <h4>Step 1: Starter Video 1</h4>
-            <iframe width="465" height="315" src="https://www.youtube.com/embed/Uwq1uiuM_9w" frameborder="0" allowfullscreen></iframe>
-
-       </div>
-
-        <div id="step2" style="display: none;">
-          <h4>Step 2: Free Trial Information</h4>
-          <p>You have been automatically enrolled in a free 7-day trial. More information has been sent to your email. You can upgrade your plan at any time from your dashboard.</p>
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#editModal">
+        Edit Website
+      </button>
+      
+      <!-- Modal -->
+      <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="editModalLabel">Edit Website</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <div id="step1">
+                <div class="youtube-video">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/Uwq1uiuM_9w?autoplay=1&mute=1" frameborder="0" allowfullscreen></iframe>
+                </div>
+              </div>
+      
+              <div id="step2" style="display: none;">
+                <h4 class="step-title">Free Trial Information</h4>
+                <p>You have been automatically enrolled in a free 7-day trial. More information has been sent to your email. You can upgrade your plan at any time from your dashboard.</p>
+              </div>
+      
+              <div id="step3" style="display: none;">
+                <h4 class="step-title">Credits and Editing Mode</h4>
+                <p>Ali Ivy has awarded you 1000 credits to work for you during your free trial. Enjoy working with her!</p>
+                <p>Now you can go into editing mode.</p>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" id="prevBtn">Prev</button>
+              <button type="button" class="btn btn-primary" id="nextBtn">Next</button>
+              <button type="button" class="btn btn-success" id="editBtn" style="display: none;">Start Editing</button>
+            </div>
+          </div>
         </div>
-
-        <div id="step3" style="display: none;">
-          <h4>Step 3: Credits and Editing Mode</h4>
-          <p>Ali Ivy has awarded you 1000 credits to work for you during your free trial. Enjoy working with her!</p>
-          <p>Now you can go into editing mode.</p>
-        </div>
       </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" id="prevBtn">Prev</button>
-        <button type="button" class="btn btn-primary" id="nextBtn">Next</button>
-        <button type="button" class="btn btn-success" id="editBtn" style="display: none;">Start Editing</button>
-      </div>
-    </div>
-  </div>
-</div>
+      
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
